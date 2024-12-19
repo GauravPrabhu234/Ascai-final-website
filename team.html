@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams-Ascai</title>
+    <link rel="stylesheet" href="s1.css">
+    <link rel="icon" href="./ascai bg.png" type="image/x-icon">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Background Video */
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px;
+           
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        /* Hamburger Menu for smaller screens */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Team Section */
+        .team-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Creative Button Styles */
+        .cta {
+            position: relative;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .cta:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta:hover svg {
+            transform: translateX(10px);
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            
+            transition: 0.5s;
+            z-index: 0;
+        }
+
+        .cta:hover::before {
+            left: 0;
+        }
+
+        .cta span {
+            z-index: 1;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta svg {
+            z-index: 1;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: rgb(201, 41, 41);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid white;
+        }
+
+        /* Responsive Design for smaller screens */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .team-container {
+                margin-top: 100px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cta {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="./back.webm" type="video/mp4">
+    </video>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Team Section -->
+    <div class="team-container">
+        <h1>Our Team</h1>
+        <div class="team-grid">
+            <a href="core.html" class="cta">
+                <span>Core Team</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+            <a href="event.html" class="cta">
+                <span>Event Team</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+            <a href="media.html" class="cta">
+                <span>Media Team</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+            <a href="pr.html" class="cta">
+                <span>PR Team</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+            <a href="doc.html" class="cta">
+                <span>Documentation Team</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+            <a href="design.html" class="cta">
+                <span>Design Team</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+            <a href="tech.html" class="cta">
+                <span>Technical Team</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                  <path d="M1,5 L11,5"></path>
+                  <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">Back to Home</a>
+
+    <!-- Optional JavaScript for Animations and Pop-up -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script>
+        // GSAP animations for smooth entrance
+        gsap.from(".cta", { duration: 1, x: -100, opacity: 0, ease: "power3.out" });
+    </script>
+</body>
+</html>

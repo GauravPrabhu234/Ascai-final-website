@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascai</title>
+    <link rel="icon" href="./ascai bg.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="./back.webm" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="./Dep logo.png" alt="ASCAI Logo" class="navbar-logo">
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="newletter .html">NewsLetter</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="#" id="contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Us Section -->
+    <div class="about-container">
+        <div class="about-left">
+            <h1>About Us</h1>
+            <p>
+                Welcome to ASCAI - Association of Students for Computing and Artificial Intelligence! 🚀
+                ASCAI is a dynamic student-led organization dedicated to fostering a passion for computing and artificial intelligence (AI). 
+                At ASCAI, we bring together enthusiastic students, industry experts, and academic leaders to explore cutting-edge technologies through workshops, hackathons, seminars, and hands-on projects. Our mission is to build a thriving community where ideas are shared, skills are honed, and future AI leaders are developed.
+            </p>
+        </div>
+        <div class="about-right">
+            <img src="./logo.png" alt="ASCAI Logo" class="logo">
+        </div>
+    </div>
+
+    <!-- Contact Us Pop-up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Connect with us on:</p>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/ascai" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/ascai_sjcem?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ascai@sjcem.edu.in" target="_blank">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- Optional JavaScript for Animations and Pop-up -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script>
+        // GSAP animations
+        gsap.from(".about-left h1", { duration: 1, x: -100, opacity: 0, ease: "power3.out" });
+        gsap.from(".about-left p", { duration: 1.5, x: -100, opacity: 0, delay: 0.5, ease: "power3.out" });
+        gsap.from(".logo", { duration: 1.5, scale: 0.5, opacity: 0, ease: "bounce.out" });
+
+        // Navbar Hamburger functionality
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.getElementById("nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+
+        // Pop-up functionality
+        const popup = document.getElementById("popup");
+        const contactBtn = document.getElementById("contact-us");
+        const closeBtn = document.querySelector(".close");
+
+        contactBtn.addEventListener("click", () => {
+            popup.style.display = "block";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            popup.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

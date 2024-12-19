@@ -1,0 +1,183 @@
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the area without distortion */
+    z-index: -1; /* Sends the video behind other content */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #111; /* Dark background to enhance neon glow */
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap into the next row */
+    justify-content: center; /* Center align the cards */
+    gap: 20px; /* Adds space between cards */
+    padding: 20px; /* Adds padding around the container */
+    margin-top: 150px; /* Add margin to push the cards below the text */
+}
+
+/* Neon Card Styles */
+.neon-card {
+    width: 182px;  /* Reduced from 260px to 182px (30% smaller) */
+    height: 228px; /* Reduced from 325px to 228px (30% smaller) */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #222;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.neon-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.3);
+}
+
+/* Neon Border Animation */
+.neon-card::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff, #ff00ffff);
+    background-size: 400% 400%;
+    filter: blur(5px);
+    z-index: -1;
+    border-radius: 15px;
+    animation: neon-border 5s linear infinite;
+}
+
+@keyframes neon-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Image Container */
+.image-container {
+    width: 100%;
+    height: 147px; /* Reduced from 210px to 147px (30% smaller) */
+}
+
+.card-image {
+    width: 100%;
+    height: 100%; /* Fit the image to the container */
+    object-fit: cover;
+    border-radius: 15px; /* Add smooth corners to the image */
+    transition: transform 0.4s ease;
+}
+
+/* Hover effect for image */
+.neon-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* Card Content */
+.card-content {
+    padding: 10px; /* Reduce padding to fit text properly */
+    color: #fff;
+    text-align: center;
+    flex-grow: 1; /* Allow the content to take up available space */
+    padding-bottom: 50px;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 21px;  /* Adjusted title size (30% smaller) */
+    margin: 5px 0;  /* Adjust margin to bring the title closer to the image */
+    color: #00ffff;  /* Neon blue for title */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+    padding-top: 13px;
+}
+
+/* Card Text */
+.card-text {
+    font-size: 13px; /* Adjust text size (30% smaller) */
+    color: #fff;
+    line-height: 1.5; /* Adjust line height for better readability */
+    margin-top: 5px; /* Optional: Add some space between the title and text */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .neon-card {
+        width: 56%; /* Adjust card width for smaller screens */
+        height: auto; /* Let height adjust automatically */
+    }
+}
+
+@media (max-width: 480px) {
+    .neon-card {
+        width: 70%; /* Adjust card width for very small screens */
+    }
+    
+    .card-title {
+        font-size: 18px; /* Adjust title size for smaller screens */
+    }
+
+    .card-text {
+        font-size: 12px; /* Adjust text size for smaller screens */
+    }
+}
+
+/* Animated Text Styles */
+.animated-text {
+    font-size: 90px; /* Text size */
+    color: #0f0f49; /* Neon blue color */
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 255, 255, 0.5);
+    animation: pulse 1.5s infinite; /* Animation effect */
+    position: absolute; /* Position it absolutely within the body */
+    top: 100px; /* Position it 20px from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for text size */
+    padding: 10px; /* Add some padding */
+    border: 5px solid (0, 255, 255, 0.385); /* Add a black border */
+    border-radius: 20px; /* Optional: round the corners of the border */
+    background-color: rgb(43, 220, 255,-50%); /* Optional: semi-transparent background for contrast */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-content: center;
+    
+}
+
+
+
+.animated-text {
+    animation: wobble 1s ease; /* Apply the wobble animation */
+}
+
+
+.container{
+    padding-top: 180px;
+   
+}
+
+.back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: rgb(201, 41, 41);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid white;
+}
